@@ -1,0 +1,13 @@
+{
+  "name": "lab-01",
+  "version": "1.0.0",
+  "description": "Session 01 lab - local MongoDB",
+  "scripts": {
+    "seed": "node seed.js",
+    "grade": "node grading/grade.js",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 01 - Users</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: system-ui, sans-serif;
+        background: #0f1117;
+        color: #e2e8f0;
+        padding: 2rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #f8fafc;
+      }
+
+      #users {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        background: #1e2130;
+        border: 1px solid #2d3148;
+        border-radius: 10px;
+        padding: 1.25rem;
+      }
+
+      .card h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: #f8fafc;
+      }
+
+      .address {
+        font-size: 0.875rem;
+        color: #94a3b8;
+        margin-bottom: 0.75rem;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .tag {
+        background: #1e3a5f;
+        color: #7dd3fc;
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+      }
+
+      .error {
+        color: #f87171;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <div id="users"></div>
+
+    <script>
+      fetch("http://localhost:3000/users")
+        .then((res) => res.json())
+        .then((users) => {
+          const container = document.getElementById("users");
+
+          users.forEach((user) => {
+            const card = document.createElement("div");
+            card.className = "card";
+
+            let html = `<h2>${user.name}</h2>`;
+
+            if (user.address) {
+              html += `<p class="address">${user.address.city}, ${user.address.country}</p>`;
+            }
+
+            if (Array.isArray(user.skills) && user.skills.length > 0) {
+              html += `<div class="skills">`;
+              user.skills.forEach((skill) => {
+                html += `<span class="tag">${skill}</span>`;
+              });
+              html += `</div>`;
+            }
+
+            card.innerHTML = html;
+            container.appendChild(card);
+          });
+        })
+        .catch(() => {
+          document.getElementById("users").innerHTML =
+            `<p class="error">Could not load users. Is the server running on port 3000?</p>`;
+        });
+    </script>
+  </body>
+</html>
