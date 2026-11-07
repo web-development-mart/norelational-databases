@@ -1,0 +1,11 @@
+{
+  "name": "lab-01",
+  "version": "1.0.0",
+  "description": "Session 01 lab - from the terminal to Node.js",
+  "scripts": {
+    "start": "node sample.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}
