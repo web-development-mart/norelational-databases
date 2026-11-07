@@ -1,10 +1,10 @@
 const { MongoClient } = require("mongodb");
 
-const connectionString = null; // TODO: fill in your connection string here
-const client = new MongoClient(connectionString);
+const URI = "mongodb://localhost:27017";
+const client = new MongoClient(URI);
 
 // You will understand this boilerplate in session 6.
-// For now, your job is to fill in the two TODOs below.
+// For now, your job is to fill in the three TODOs below.
 
 async function main() {
   await client.connect();
@@ -12,12 +12,25 @@ async function main() {
 
   await users.deleteMany({});
 
-  // TODO 1: insert a user with an embedded address object
-  // The address must have at least a city and a country field and an avatar image URL.
-  // Example: { name: "Alice", address: { city: "Paris", country: "France", avatar: "https://example.com/avatar.jpg" } }
+  // TODO 1: insert a user with an embedded address object.
+  // The address must have at least a city and a country field.
+  // Example: { name: "Alice", address: { city: "Paris", country: "France" } }
 
-  // TODO 2: insert a user with a skills array containing at least 3 items
+  // TODO 2: insert a user with a skills array containing at least 3 items.
   // Example: { name: "Bob", skills: ["JavaScript", "MongoDB", "Node.js"] }
+
+  // TODO 3: use insertMany to insert at least 5 users in a single call.
+  // Requirements:
+  //   - At least 2 users must have address.country set to "France"
+  //   - At least 2 users must have a skills array with at least 1 item
+
+  // TODO 4: retrieve all documents and log each user's name.
+
+  // TODO 5: use dot notation to find the user whose address.city is "Paris" and log the result.
+
+  // TODO 6: find all users whose address.country is "France" and log their names.
+
+  // TODO 7: find all users who have a skills field and log their names.
 
   await client.close();
 }

@@ -28,7 +28,7 @@ async function main() {
   check(
     "Collection is not empty",
     total > 0,
-    "Make sure solution.js inserts documents before grade.js runs."
+    "Make sure seed.js inserts documents before grade.js runs."
   );
 
   // Check 2: at least one document has address.city and address.country
@@ -70,6 +70,29 @@ async function main() {
       "Fix check 2 first."
     );
   }
+
+  // Check 5: at least 7 documents total (proves insertMany was used)
+  check(
+    "Collection has at least 7 documents (insertMany)",
+    total >= 7,
+    "Use insertMany to insert at least 5 users (you already have 2 from TODO 1 and 2)."
+  );
+
+  // Check 6: at least 2 users from France (from the insertMany batch)
+  const frenchCount = await users.countDocuments({ "address.country": "France" });
+  check(
+    'At least 2 documents have address.country "France"',
+    frenchCount >= 2,
+    'Include at least 2 users with address.country: "France" in your insertMany call.'
+  );
+
+  // Check 7: at least 3 users with a skills array (1 from TODO 2 + 2 from insertMany)
+  const skilledCount = await users.countDocuments({ skills: { $exists: true } });
+  check(
+    "At least 3 documents have a skills array",
+    skilledCount >= 3,
+    "Include at least 2 users with a skills array in your insertMany call."
+  );
 
   console.log(`\nResult: ${passed} passed, ${failed} failed\n`);
 
