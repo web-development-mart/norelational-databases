@@ -4,7 +4,7 @@ const URI = "mongodb://localhost:27017";
 const client = new MongoClient(URI);
 
 // You will understand this boilerplate in session 6.
-// For now, your job is to fill in the three TODOs below.
+// For now, your job is to fill in the seven TODOs below.
 
 async function main() {
   await client.connect();
@@ -14,10 +14,8 @@ async function main() {
 
   // TODO 1: insert a user with an embedded address object.
   // The address must have at least a city and a country field.
-  // Example: { name: "Alice", address: { city: "Paris", country: "France" } }
 
   // TODO 2: insert a user with a skills array containing at least 3 items.
-  // Example: { name: "Bob", skills: ["JavaScript", "MongoDB", "Node.js"] }
 
   // TODO 3: use insertMany to insert at least 5 users in a single call.
   // Requirements:

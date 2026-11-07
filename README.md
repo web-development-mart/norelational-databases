@@ -9,19 +9,9 @@ npm install
 
 Make sure MongoDB is running locally on port 27017.
 
-## Start with the sample
-
-Before writing any code, run the provided example and read through it:
-
-```bash
-node sample.js
-```
-
-Open `backend/sample.js` and read every comment. It performs the same seven operations you will need to do in `seed.js`, but on a `books` collection. Use it as your reference - not as something to copy.
-
 ## Your task
 
-Open `backend/seed.js` and fill in the seven TODOs. Each one maps directly to an operation demonstrated in `sample.js`.
+Open `backend/seed.js` and fill in the seven TODOs.
 
 | TODO | Operation | What to do |
 |------|-----------|------------|
