@@ -5,7 +5,7 @@ on:
     paths:
       - "backend/seed.js"
       - "backend/grading/grade.js"
-      - "backend/.github/workflows/grade-lab01.yml"
+      - ".github/workflows/grade-lab01.yml"
   pull_request:
     paths:
       - "backend/seed.js"
