@@ -1,60 +1,86 @@
-# Lab 01 - Local MongoDB
+# Lab 03 - REST API with Express and MongoDB
 
-[![Grade Lab 01](https://github.com/web-development-mart/norelational-databases/actions/workflows/grade-lab01.yml/badge.svg)](https://github.com/web-development-mart/norelational-databases/actions/workflows/grade-lab01.yml)
+## What this lab is about
+
+In previous labs you queried MongoDB directly from a script. In a real application, the database is never exposed to the browser - a server sits in between and exposes a controlled interface: a REST API.
+
+In this lab you will build that interface using Express. The frontend is already provided - once your API works, the browser will be able to create, read, update, and delete users and posts.
 
 ## Setup
+
+Make sure MongoDB is running locally on port 27017.
 
 ```bash
 cd backend
 npm install
 ```
 
-Make sure MongoDB is running locally on port 27017....
+Seed the database with sample users and posts:
+
+```bash
+npm run seed
+```
+
+## Project structure
+
+```
+backend/
+  server.js              - Express app - provided, do not modify
+  routes/
+    users.js             - Wires URLs to controllers - provided
+    posts.js             - Wires URLs to controllers - provided
+  controllers/
+    users.js             - Handles req/res, calls service - provided
+    posts.js             - Handles req/res, calls service - provided
+  services/
+    users.js             - MongoDB operations - fill in the TODOs
+    posts.js             - MongoDB operations - fill in the TODOs
+  models/
+    user.js              - User document shape - provided
+    post.js              - Post document shape - provided
+  seed.js                - Sample data - provided
+frontend/
+  index.html             - Browser client - provided
+```
 
 ## Your task
 
-Open `backend/seed.js` and fill in the seven TODOs.
+Open `backend/services/users.js` and `backend/services/posts.js`. Each file has 5 functions with TODOs. Fill them in using the MongoDB driver.
 
-| TODO | Operation                | What to do                                                                                                                         |
-| ---- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | `insertOne`              | Insert a user with an embedded `address` object containing at least `city` and `country`                                           |
-| 2    | `insertOne`              | Insert a user with a `skills` array containing at least 3 items                                                                    |
-| 3    | `insertMany`             | Insert at least 5 users in a single call - at least 2 must have `address.country: "France"`, at least 2 must have a `skills` array |
-| 4    | `find`                   | Retrieve all users and log each name                                                                                               |
-| 5    | `findOne` + dot notation | Find the user whose `address.city` is `"Paris"` and log the result                                                                 |
-| 6    | `find` + filter          | Find all users whose `address.country` is `"France"` and log their names                                                           |
-| 7    | `find` + `$exists`       | Find all users who have a `skills` field and log their names                                                                       |
+| Function | Task |
+|----------|------|
+| `findAll()` | Return all documents as an array |
+| `findById(id)` | Return one document by `_id` |
+| `create(body)` | Insert a new document, return the full inserted document |
+| `update(id, body)` | Update a document with `$set`, return the updated document |
+| `remove(id)` | Delete a document, return `deletedCount` |
 
-## Run your code
+Both `users.js` and `posts.js` follow the same pattern. The models (`models/user.js`, `models/post.js`) provide helper functions (`createUserDocument`, `createPostDocument`) to build a clean object from `req.body` before inserting or updating.
 
-Open a terminal window in the same directory as `seed.js`.
+## Commands reference
 
-Run your code with:
+| Command | What it does |
+|---------|-------------|
+| `Model.find()` | Get all documents |
+| `Model.findById(id)` | Get one document by id, returns `null` if not found |
+| `Model.create(doc)` | Insert a document, returns the saved document |
+| `Model.findByIdAndUpdate(id, update, { new: true })` | Update and return the new document |
+| `Model.findByIdAndDelete(id)` | Delete a document, returns the deleted document or `null` |
 
-```bash
-node seed.js
-```
-
-## Check your work
-
-```bash
-node grading/grade.js
-```
-
-All 7 checks must pass. The grader also runs automatically on GitHub when you push.
-
-## View the data in the browser
-
-Start the server:
+## Run the server
 
 ```bash
-node server.js
+npm start
 ```
 
-Then open `frontend/index.html` in your browser. You will see three sections:
+Then open `frontend/index.html` in your browser.
 
-- **All Users** - every document (no filter)
-- **Users from France** - `find({ "address.country": "France" })`
-- **Users with Skills** - `find({ skills: { $exists: true } })`
+## HTTP status codes to use
 
-`server.js` is provided for you - you do not need to modify it. Notice that each filtered view requires its own hardcoded route. That limitation is exactly what a REST API solves - you will build one in sessions 7 and 8.
+| Situation | Status code |
+|-----------|-------------|
+| Successful read | `200` |
+| Document created | `201` |
+| Successful delete | `204` |
+| Document not found | `404` |
+| Server error | `500` |
