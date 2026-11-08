@@ -9,7 +9,7 @@ cd backend
 npm install
 ```
 
-Make sure MongoDB is running locally on port 27017.
+Make sure MongoDB is running locally on port 27017....
 
 ## Your task
 
