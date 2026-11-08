@@ -23,7 +23,7 @@ Make sure MongoDB is running locally on port 27017, then install the driver:
 npm install
 ```
 
-## The Node.js wrapper
+## The Node.js wrapper -
 
 Open `sample.js`. The top of the file sets up the connection - read the comments carefully. You do not need to understand every detail yet (that comes in session 6), but you should understand the shape:
 
@@ -57,6 +57,36 @@ Run your script after each TODO to see the output grow:
 ```bash
 node sample.js
 ```
+
+## Commands reference
+
+**Boilerplate (provided - read only)**
+
+| Command | What it does |
+|---------|-------------|
+| `new MongoClient(uri)` | Create a client |
+| `client.connect()` | Open the connection |
+| `client.db(name).collection(name)` | Select a collection |
+| `client.close()` | Close the connection |
+
+**Write**
+
+| Command | What it does |
+|---------|-------------|
+| `collection.insertOne({ ... })` | Insert a single document |
+| `collection.insertMany([ ... ])` | Insert multiple documents at once |
+| `collection.deleteMany({})` | Delete all documents |
+
+**Read**
+
+| Command | What it does |
+|---------|-------------|
+| `collection.find()` | Get all documents |
+| `collection.find({ field: value })` | Filter by field value |
+| `collection.find({ "field.nested": value })` | Filter using dot notation |
+| `collection.find({ field: { $exists: true } })` | Filter by field existence |
+| `collection.findOne({ ... })` | Get the first matching document |
+| `.toArray()` | Resolve a cursor into a JavaScript array |
 
 ## Check your work
 
