@@ -13,15 +13,19 @@ Make sure MongoDB is running locally on port 27017.
 
 Open `backend/seed.js` and fill in the seven TODOs.
 
-| TODO | Operation | What to do |
-|------|-----------|------------|
-| 1 | `insertOne` | Insert a user with an embedded `address` object containing at least `city` and `country` |
-| 2 | `insertOne` | Insert a user with a `skills` array containing at least 3 items |
-| 3 | `insertMany` | Insert at least 5 users in a single call - at least 2 must have `address.country: "France"`, at least 2 must have a `skills` array |
-| 4 | `find` | Retrieve all users and log each name |
-| 5 | `findOne` + dot notation | Find the user whose `address.city` is `"Paris"` and log the result |
-| 6 | `find` + filter | Find all users whose `address.country` is `"France"` and log their names |
-| 7 | `find` + `$exists` | Find all users who have a `skills` field and log their names |
+| TODO | Operation                | What to do                                                                                                                         |
+| ---- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | `insertOne`              | Insert a user with an embedded `address` object containing at least `city` and `country`                                           |
+| 2    | `insertOne`              | Insert a user with a `skills` array containing at least 3 items                                                                    |
+| 3    | `insertMany`             | Insert at least 5 users in a single call - at least 2 must have `address.country: "France"`, at least 2 must have a `skills` array |
+| 4    | `find`                   | Retrieve all users and log each name                                                                                               |
+| 5    | `findOne` + dot notation | Find the user whose `address.city` is `"Paris"` and log the result                                                                 |
+| 6    | `find` + filter          | Find all users whose `address.country` is `"France"` and log their names                                                           |
+| 7    | `find` + `$exists`       | Find all users who have a `skills` field and log their names                                                                       |
+
+## Run your code
+
+Open a terminal window in the same directory as `seed.js`.
 
 Run your code with:
 
