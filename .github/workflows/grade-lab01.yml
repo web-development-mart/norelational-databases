@@ -11,9 +11,8 @@ on:
       - "backend/seed.js"
 
 jobs:
-  milestone-1:
-  name: Milestone 1
   grade:
+    name: Milestone 1
     runs-on: ubuntu-latest
 
     services:
@@ -52,10 +51,21 @@ jobs:
         working-directory: backend
         env:
           MONGODB_URI: mongodb://localhost:27017
-        run:
-          node grading/grade.js
+        run: node grading/grade.js
 
-          # ── Notify Google Sheet ─────────────────────────────────────────────────
+      - name: Read grade result
+        id: grade-result
+        if: always()
+        run: |
+          if [ -f backend/grading/result.json ]; then
+            echo "passed=$(node -p "require('./backend/grading/result.json').passed")" >> $GITHUB_OUTPUT
+            echo "failed=$(node -p "require('./backend/grading/result.json').failed")" >> $GITHUB_OUTPUT
+            echo "total=$(node -p "require('./backend/grading/result.json').total")" >> $GITHUB_OUTPUT
+          else
+            echo "passed=0" >> $GITHUB_OUTPUT
+            echo "failed=0" >> $GITHUB_OUTPUT
+            echo "total=0" >> $GITHUB_OUTPUT
+          fi
 
       - name: Notify Google Sheet
         if: always()
@@ -68,5 +78,8 @@ jobs:
               \"tag\": \"${{ github.ref_name }}\",
               \"status\": \"${{ job.status }}\",
               \"milestone\": \"1\",
+              \"passed\": \"${{ steps.grade-result.outputs.passed }}\",
+              \"failed\": \"${{ steps.grade-result.outputs.failed }}\",
+              \"total\": \"${{ steps.grade-result.outputs.total }}\",
               \"run_url\": \"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"
             }"

@@ -1,4 +1,6 @@
 const { MongoClient } = require("mongodb");
+const fs = require("fs");
+const path = require("path");
 
 const URI = process.env.MONGODB_URI || "mongodb://localhost:27017";
 const client = new MongoClient(URI);
@@ -95,6 +97,11 @@ async function main() {
   );
 
   console.log(`\nResult: ${passed} passed, ${failed} failed\n`);
+
+  fs.writeFileSync(
+    path.join(__dirname, "result.json"),
+    JSON.stringify({ passed, failed, total: passed + failed })
+  );
 
   await client.close();
   process.exit(failed > 0 ? 1 : 0);
