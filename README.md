@@ -1,5 +1,7 @@
 # Lab 01 - Local MongoDB
 
+[![Grade Lab 01](https://github.com/web-development-mart/norelational-databases/actions/workflows/grade-lab01.yml/badge.svg)](https://github.com/web-development-mart/norelational-databases/actions/workflows/grade-lab01.yml)
+
 ## Setup
 
 ```bash
