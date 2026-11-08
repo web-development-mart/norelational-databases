@@ -1,38 +1,61 @@
-# Lab 01 - Local MongoDB
+# Lab 01 - From the Terminal to Node.js
 
-[![Grade Lab 01](https://github.com/web-development-mart/norelational-databases/actions/workflows/grade-lab01.yml/badge.svg)](https://github.com/web-development-mart/norelational-databases/actions/workflows/grade-lab01.yml)
+[![Grade Lab Intro](https://github.com/web-development-mart/norelational-databases/actions/workflows/grade-intro.yml/badge.svg)](https://github.com/web-development-mart/norelational-databases/actions/workflows/grade-intro.yml)
+
+## What this lab is about
+
+In session 1 you ran MongoDB commands directly in the shell:
+
+```
+db.books.insertOne({ title: "Dune", author: "Frank Herbert" })
+db.books.find()
+```
+
+In a real application you do not use the shell. You write Node.js code that sends the same operations to MongoDB through a driver. The commands are identical - what changes is the wrapper around them.
+
+This lab walks you through that transition using a books collection.
 
 ## Setup
 
+Make sure MongoDB is running locally on port 27017, then install the driver:
+
 ```bash
-cd backend
 npm install
 ```
 
-Make sure MongoDB is running locally on port 27017....
+## The Node.js wrapper
+
+Open `sample.js`. The top of the file sets up the connection - read the comments carefully. You do not need to understand every detail yet (that comes in session 6), but you should understand the shape:
+
+```
+require the driver
+create a client with the connection string
+define an async main function
+  connect
+  get a reference to a collection
+  ... your operations go here ...
+  close the connection
+call main()
+```
 
 ## Your task
 
-Open `backend/seed.js` and fill in the seven TODOs.
+Fill in the seven TODOs inside `sample.js`. Each one is a MongoDB operation you already know from the shell - your job is to write it in Node.js.
 
-| TODO | Operation                | What to do                                                                                                                         |
-| ---- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | `insertOne`              | Insert a user with an embedded `address` object containing at least `city` and `country`                                           |
-| 2    | `insertOne`              | Insert a user with a `skills` array containing at least 3 items                                                                    |
-| 3    | `insertMany`             | Insert at least 5 users in a single call - at least 2 must have `address.country: "France"`, at least 2 must have a `skills` array |
-| 4    | `find`                   | Retrieve all users and log each name                                                                                               |
-| 5    | `findOne` + dot notation | Find the user whose `address.city` is `"Paris"` and log the result                                                                 |
-| 6    | `find` + filter          | Find all users whose `address.country` is `"France"` and log their names                                                           |
-| 7    | `find` + `$exists`       | Find all users who have a `skills` field and log their names                                                                       |
+| TODO | Operation | Task |
+|------|-----------|------|
+| 1 | `insertOne` | Insert a book with an embedded `publisher` object (name, country) |
+| 2 | `insertOne` | Insert a book with a `tags` array of at least 3 items |
+| 3 | `insertMany` | Insert at least 5 books in one call - mix of with/without publisher, with/without tags |
+| 4 | `find` | Retrieve all books and log each title |
+| 5 | `findOne` + dot notation | Find the first book whose `publisher.country` is `"France"` and log its title |
+| 6 | `find` + filter | Find all books published in France and log how many there are |
+| 7 | `find` + `$exists` | Find all books that have a `tags` field and log their titles and tags |
 
-## Run your code
-
-Open a terminal window in the same directory as `seed.js`.
-
-Run your code with:
+Run your script after each TODO to see the output grow:
 
 ```bash
-node seed.js
+node sample.js
 ```
 
 ## Check your work
@@ -42,19 +65,3 @@ node grading/grade.js
 ```
 
 All 7 checks must pass. The grader also runs automatically on GitHub when you push.
-
-## View the data in the browser
-
-Start the server:
-
-```bash
-node server.js
-```
-
-Then open `frontend/index.html` in your browser. You will see three sections:
-
-- **All Users** - every document (no filter)
-- **Users from France** - `find({ "address.country": "France" })`
-- **Users with Skills** - `find({ skills: { $exists: true } })`
-
-`server.js` is provided for you - you do not need to modify it. Notice that each filtered view requires its own hardcoded route. That limitation is exactly what a REST API solves - you will build one in sessions 7 and 8.
