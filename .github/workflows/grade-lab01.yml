@@ -2,13 +2,6 @@ name: Grade Lab 01
 
 on:
   push:
-    paths:
-      - "backend/seed.js"
-      - "backend/grading/grade.js"
-      - ".github/workflows/grade-lab01.yml"
-  pull_request:
-    paths:
-      - "backend/seed.js"
 
 jobs:
   grade:
