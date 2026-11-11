@@ -51,11 +51,14 @@ Work through them in this order and make sure you understand each one before mov
 | File | What to look for |
 |------|-----------------|
 | `server.js` | How the app starts, which routers are mounted |
-| `routes/users.js` | Which HTTP verbs map to which controller functions |
+| `routes/users.js` | Which HTTP verbs map to which controller functions; note the `authMiddleware` - open `middleware/auth.js` to see what it does |
 | `controllers/users.js` | How it reads `req`, calls the service, and sends a response |
 | `services/users.js` | The TODO comments - what Mongoose method does each one need? |
 | `models/post.js` | The complete Post schema - use this as a reference for your User schema |
 | `models/user.js` | The empty User schema you will define |
+| `data/users.json` | The 7 users you will insert - note the shape of each document |
+| `data/posts.json` | The 14 posts - note how `author` is stored |
+| `seed.js` | The script you will implement to load the JSON files into MongoDB |
 
 ---
 

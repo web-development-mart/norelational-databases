@@ -35,19 +35,7 @@ The `.env` file is in `.gitignore` - it will never be pushed to GitHub. Never co
 
 ---
 
-## 3. Seed the database
-
-The project includes a seed script that inserts a set of users and posts with known IDs into your database. The test suite relies on this data.
-
-```bash
-npm run seed
-```
-
-You should see confirmation that users and posts were inserted. Run it once - if you run it again it will drop and re-insert the data.
-
----
-
-## 4. Start the server
+## 3. Start the server
 
 ```bash
 npm start
@@ -65,7 +53,7 @@ If the server fails to start, check that your `MONGODB_URI` is correct and that 
 
 ---
 
-## 5. Open the frontend
+## 4. Open the frontend
 
 Open `frontend/index.html` directly in your browser (no server needed for the frontend - it uses `fetch` to talk to `localhost:3000`).
 
@@ -73,7 +61,7 @@ You should see a list of users and a list of posts. The data comes from hardcode
 
 ---
 
-## 6. Test the API manually
+## 5. Test the API manually
 
 Use your browser or Bruno to send a few requests:
 

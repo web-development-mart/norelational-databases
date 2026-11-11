@@ -55,17 +55,42 @@ fieldName: {
 
 ---
 
-## Check your work
+## Check your work - server starts cleanly
 
-Restart the server (`npm start`) after saving your changes. If Mongoose rejects your schema it will print an error at startup.
+Restart the server (`npm start`). If Mongoose rejects your schema it will print an error at startup. No errors means your schema is syntactically valid.
 
-Then test these requests:
+---
 
-1. `POST /users` with body `{ "name": "Alice", "email": "alice@test.com", "skills": ["js"] }`
-   - Should return 201 with an `_id` - this means `create` in the service still returns `null`, but once you implement it in the next step it should work
-   - For now, confirming the server starts without errors is enough
+## Implement seed.js
 
-2. After you implement the service in step 03, come back and verify that the User document stored in MongoDB has all the fields you defined.
+Now that the schema is defined, implement the seed script so you can populate the database with consistent test data.
+
+Open `seed.js`. The data is already prepared for you in two JSON files in the `data/` folder:
+- `data/users.json` - 7 users (Alice, Bob, Carol, Dave, Eve, Frank, Grace) with fixed `_id` values, names, emails, skills, addresses, and avatar URLs
+- `data/posts.json` - 14 posts (2 per user) with titles, content, tags, dates, and an `author` field containing the matching user `_id`
+
+Both files are already loaded at the top of `seed.js` as `usersData` and `postsData`. Open them and read the data - your schema should be able to store every field you see there.
+
+Your job is to fill in the four TODO blocks. Each one is a single `await` call:
+
+1. Delete all existing user documents
+2. Delete all existing post documents
+3. Insert all users from `usersData`
+4. Insert all posts from `postsData`
+
+Then add a log line so you can confirm the counts.
+
+**What to think about:** Which Mongoose methods handle bulk delete and bulk insert? Both take the collection-level shape you used in the User model.
+
+Once implemented, run it:
+
+```bash
+npm run seed
+```
+
+You should see `Seeded 7 users and 14 posts.`
+
+If you see `Seeded 7 users and 14 posts.` but then open MongoDB Compass and the users have no `name` or `email` fields - your schema is not defined correctly. Fix the schema and re-run seed.
 
 ---
 

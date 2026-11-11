@@ -9,9 +9,13 @@ Run the automated test suite and get all tests to pass.
 ## Before you run
 
 Make sure:
-- The database has been seeded (`npm run seed`)
 - Your `.env` file exists with a valid `MONGODB_URI`
 - The server is not already running on port 3000 (the test runner starts its own)
+- The database has been seeded **after** you defined the User schema - if you are unsure, run it again now:
+
+```bash
+npm run seed
+```
 
 ---
 
