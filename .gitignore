@@ -3,4 +3,11 @@ backend/**/*-solution.js
 backend/seed-solution.js
 backend/.env
 
+# Generated test output and grading artefacts - never commit these
+backend/grading/
+backend/test-results/
+
+# Teacher-only files
+questions/ANSWERS*
+
 .env
