@@ -136,3 +136,304 @@ h1 {
   color: #7dd3fc;
   font-size: 0.8rem;
 }
+
+/* --- Clickable card --- */
+
+.card-clickable {
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.card-clickable:hover {
+  border-color: #4f6080;
+  background: #252a3a;
+}
+
+/* --- Post card --- */
+
+.post-card {
+  flex-direction: column;
+}
+
+.card-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-header-row h3 {
+  margin-bottom: 0;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.post-content {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* --- Buttons --- */
+
+.btn {
+  font-size: 0.75rem;
+  font-family: inherit;
+  padding: 0.25rem 0.65rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-edit {
+  background: #1e3a5f;
+  color: #7dd3fc;
+  border-color: #2d5080;
+}
+
+.btn-edit:hover {
+  background: #254d80;
+}
+
+.btn-delete {
+  background: #3b1a1a;
+  color: #f87171;
+  border-color: #5a2a2a;
+}
+
+.btn-delete:hover {
+  background: #4f2222;
+}
+
+.btn-save {
+  background: #1e3a5f;
+  color: #7dd3fc;
+  border-color: #2d5080;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.btn-save:hover {
+  background: #254d80;
+}
+
+.btn-cancel {
+  background: transparent;
+  color: #64748b;
+  border-color: #2d3148;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.btn-cancel:hover {
+  color: #94a3b8;
+  border-color: #4f6080;
+}
+
+.btn-new {
+  margin-left: auto;
+  background: #0f2d1a;
+  color: #6ee7a0;
+  border-color: #1a4d2e;
+  padding: 0.3rem 0.85rem;
+}
+
+.btn-new:hover {
+  background: #163d24;
+}
+
+/* --- Modal --- */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  background: #1e2130;
+  border: 1px solid #2d3148;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 680px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #f8fafc;
+}
+
+.modal-content {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.modal-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.modal-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal-body h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 0.4rem;
+}
+
+.modal-body .address {
+  margin-bottom: 0.4rem;
+}
+
+.modal-body .skills {
+  margin-top: 0.75rem;
+}
+
+.modal-body--full {
+  width: 100%;
+}
+
+.modal-body--full h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 1.25rem;
+}
+
+/* --- Edit form --- */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.form-hint {
+  font-weight: 400;
+  color: #64748b;
+}
+
+.form-group input,
+.form-group textarea {
+  background: #0f1117;
+  border: 1px solid #2d3148;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4f6080;
+}
+
+.form-group select {
+  background: #0f1117;
+  border: 1px solid #2d3148;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.modal-posts {
+  margin-top: 1.5rem;
+  border-top: 1px solid #2d3148;
+  padding-top: 1.25rem;
+}
+
+.modal-posts-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.modal-post {
+  padding: 0.75rem;
+  background: #0f1117;
+  border: 1px solid #2d3148;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.modal-post:last-child {
+  margin-bottom: 0;
+}
+
+.modal-post-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 0.25rem;
+}
+
+.modal-post .address {
+  margin-bottom: 0.4rem;
+}
+
+.modal-post .skills {
+  margin-top: 0.4rem;
+}

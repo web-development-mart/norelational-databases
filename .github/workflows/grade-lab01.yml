@@ -5,7 +5,7 @@ on:
 
 jobs:
   grade:
-    name: Milestone 1
+    name: Milestone 3
     runs-on: ubuntu-latest
 
     services:
@@ -34,31 +34,54 @@ jobs:
         working-directory: backend
         run: npm install
 
-      - name: Run student solution
+      - name: Seed database
         working-directory: backend
         env:
-          MONGODB_URI: mongodb://localhost:27017
+          MONGODB_URI: mongodb://localhost:27017/blog_db
         run: node seed.js
 
-      - name: Run grader
+      - name: Run Playwright tests
         working-directory: backend
         env:
-          MONGODB_URI: mongodb://localhost:27017
-        run: node grading/grade.js
+          MONGODB_URI: mongodb://localhost:27017/blog_db
+          CI: "true"
+        run: npx playwright test
+        continue-on-error: true
 
-      - name: Read grade result
-        id: grade-result
+      - name: Read results
+        id: results
         if: always()
         run: |
-          if [ -f backend/grading/result.json ]; then
-            echo "passed=$(node -p "require('./backend/grading/result.json').passed")" >> $GITHUB_OUTPUT
-            echo "failed=$(node -p "require('./backend/grading/result.json').failed")" >> $GITHUB_OUTPUT
-            echo "total=$(node -p "require('./backend/grading/result.json').total")" >> $GITHUB_OUTPUT
+          if [ -f backend/grading/results.json ]; then
+            PASSED=$(node -p "require('./backend/grading/results.json').stats.expected")
+            FAILED=$(node -p "require('./backend/grading/results.json').stats.unexpected")
+            TOTAL=$(node -p "require('./backend/grading/results.json').stats.expected + require('./backend/grading/results.json').stats.unexpected")
           else
-            echo "passed=0" >> $GITHUB_OUTPUT
-            echo "failed=0" >> $GITHUB_OUTPUT
-            echo "total=0" >> $GITHUB_OUTPUT
+            PASSED=0; FAILED=0; TOTAL=0
           fi
+          echo "passed=$PASSED" >> $GITHUB_OUTPUT
+          echo "failed=$FAILED" >> $GITHUB_OUTPUT
+          echo "total=$TOTAL"   >> $GITHUB_OUTPUT
+
+      - name: Job summary
+        if: always()
+        run: |
+          echo "## Milestone 3 - REST API" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| ✅ Passed | ${{ steps.results.outputs.passed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ❌ Failed | ${{ steps.results.outputs.failed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[View full report (HTML artifact)](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: backend/grading/report/
+          retention-days: 30
 
       - name: Notify Google Sheet
         if: always()
@@ -66,14 +89,14 @@ jobs:
           curl -L -X POST "${{ secrets.SHEETS_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
             -d "{
-              \"repo\": \"${{ github.repository }}\",
-              \"student\": \"${{ github.actor }}\",
-              \"tag\": \"${{ github.ref_name }}\",
-              \"status\": \"${{ job.status }}\",
-              \"milestone\": \"1\",
-              \"passed\": \"${{ steps.grade-result.outputs.passed }}\",
-              \"failed\": \"${{ steps.grade-result.outputs.failed }}\",
-              \"total\": \"${{ steps.grade-result.outputs.total }}\",
-              \"run_url\": \"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"
+              \"repo\":      \"${{ github.repository }}\",
+              \"student\":   \"${{ github.actor }}\",
+              \"tag\":       \"${{ github.ref_name }}\",
+              \"status\":    \"${{ job.status }}\",
+              \"milestone\": \"3\",
+              \"passed\":    \"${{ steps.results.outputs.passed }}\",
+              \"failed\":    \"${{ steps.results.outputs.failed }}\",
+              \"total\":     \"${{ steps.results.outputs.total }}\",
+              \"run_url\":   \"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"
             }" \
             -w "\nHTTP %{http_code}\n"

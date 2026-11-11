@@ -1,13 +1,10 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  address: {
-    city: String,
-    country: String,
-  },
-  skills: [String],
+  // TODO : define the schema for a User with the following fields:
+  // - name: String
+  // - email: String
+  // - skills: Array of Strings
 });
 
 module.exports = mongoose.model("User", userSchema);

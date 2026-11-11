@@ -1,0 +1,1234 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\$CM7100-M9DP4O11CIGV\\.nvm\\versions\\node\\v24.16.0\\bin\\node.exe",
+      "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\playwright.config.js",
+    "rootDir": "C:/Users/$CM7100-M9DP4O11CIGV/OneDrive - EPITA/Documents/EPITA-WORK/PROJECTS/NonRelationalDatabases/repos/lab-01/backend/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/$CM7100-M9DP4O11CIGV/OneDrive - EPITA/Documents/EPITA-WORK/PROJECTS/NonRelationalDatabases/repos/lab-01/backend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "C:/Users/$CM7100-M9DP4O11CIGV/OneDrive - EPITA/Documents/EPITA-WORK/PROJECTS/NonRelationalDatabases/repos/lab-01/backend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "api",
+        "testDir": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests",
+        "snapshotDir": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://localhost:3000"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "api"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "grading/report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "grading/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 7,
+    "webServer": {
+      "command": "node server.js",
+      "url": "http://localhost:3000/users",
+      "env": {
+        "MONGODB_URI": "mongodb://localhost:27017/blog_db"
+      },
+      "reuseExistingServer": true,
+      "stdout": "pipe",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "api.spec.js",
+      "file": "api.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Users API",
+          "file": "api.spec.js",
+          "line": 17,
+          "column": 15,
+          "specs": [
+            {
+              "title": "GET /users returns 200 and an array",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 43,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:50.728Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-897d0a6f167a499dade0",
+              "file": "api.spec.js",
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "GET /users items have name and email fields",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 21,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:50.822Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-1d80e0f872922fb1e1ef",
+              "file": "api.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "POST /users returns 201 with an _id",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 30,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:50.857Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-8bfe55b76590f6574839",
+              "file": "api.spec.js",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "GET /users/:id returns 200 and the correct document",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:50.899Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-ef271f5c75c93f0cfc13",
+              "file": "api.spec.js",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "GET /users/:id returns 404 for an unknown id",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:50.927Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-5575a51f718eb8ddf62d",
+              "file": "api.spec.js",
+              "line": 59,
+              "column": 3
+            },
+            {
+              "title": "PUT /users/:id returns 200 and the document",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:50.954Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-f595de766e2d814b75cb",
+              "file": "api.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "PUT /users/:id returns 404 for an unknown id",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:50.983Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-9b1588d3f759a51c8ecf",
+              "file": "api.spec.js",
+              "line": 75,
+              "column": 3
+            },
+            {
+              "title": "DELETE /users/:id returns 204",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.014Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-b28bbb09dd5f1d6c55f3",
+              "file": "api.spec.js",
+              "line": 82,
+              "column": 3
+            },
+            {
+              "title": "GET /users/:id returns 404 after deletion",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.037Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-806f65ce9c74d9c3f125",
+              "file": "api.spec.js",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "DELETE /users/:id returns 404 for an unknown id",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 17,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.060Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 17,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-eff65199db95cf560e08",
+              "file": "api.spec.js",
+              "line": 92,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Posts API",
+          "file": "api.spec.js",
+          "line": 102,
+          "column": 15,
+          "specs": [
+            {
+              "title": "GET /posts returns 200 and an array",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.090Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-155a00f4cd5567257cef",
+              "file": "api.spec.js",
+              "line": 108,
+              "column": 3
+            },
+            {
+              "title": "GET /posts items have title, content, tags and a populated author",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.121Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-db7c8b71b99447f60e38",
+              "file": "api.spec.js",
+              "line": 115,
+              "column": 3
+            },
+            {
+              "title": "POST /posts returns 201 with a populated author",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 29,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.150Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-6ce8438838b5786b8ca4",
+              "file": "api.spec.js",
+              "line": 131,
+              "column": 3
+            },
+            {
+              "title": "GET /posts/:id returns 200 and the correct document",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.191Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-768e9c7fad07ca087f2c",
+              "file": "api.spec.js",
+              "line": 152,
+              "column": 3
+            },
+            {
+              "title": "GET /posts/:id returns 404 for an unknown id",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.218Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-abf795932f9b26f0f066",
+              "file": "api.spec.js",
+              "line": 160,
+              "column": 3
+            },
+            {
+              "title": "PUT /posts/:id returns 200 and the updated document",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.247Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-9141e8545d4c1ca417ec",
+              "file": "api.spec.js",
+              "line": 167,
+              "column": 3
+            },
+            {
+              "title": "PUT /posts/:id returns 404 for an unknown id",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.276Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-2ee61733eeff9e07cd41",
+              "file": "api.spec.js",
+              "line": 177,
+              "column": 3
+            },
+            {
+              "title": "DELETE /posts/:id returns 204",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.305Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-921b2a72e824e33d6bf3",
+              "file": "api.spec.js",
+              "line": 184,
+              "column": 3
+            },
+            {
+              "title": "GET /posts/:id returns 404 after deletion",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 31,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.331Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-6ef2a9422f5fbd92e9ba",
+              "file": "api.spec.js",
+              "line": 189,
+              "column": 3
+            },
+            {
+              "title": "DELETE /posts/:id returns 404 for an unknown id",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.376Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-573653b4e6f35e63f9b2",
+              "file": "api.spec.js",
+              "line": 194,
+              "column": 3
+            },
+            {
+              "title": "cleanup temp author",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                        "line": 102,
+                        "column": 15
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T11:53:51.394Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "C:\\Users\\$CM7100-M9DP4O11CIGV\\OneDrive - EPITA\\Documents\\EPITA-WORK\\PROJECTS\\NonRelationalDatabases\\repos\\lab-01\\backend\\tests\\api.spec.js",
+                            "line": 102,
+                            "column": 15
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-c91b869b3ea71edf82c4",
+              "file": "api.spec.js",
+              "line": 200,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-11T11:53:49.233Z",
+    "duration": 2486.6369999999997,
+    "expected": 21,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

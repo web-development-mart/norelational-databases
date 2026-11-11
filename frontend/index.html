@@ -17,18 +17,18 @@
 
     <div class="section">
       <div class="section-header">
-        <h2>Users from France</h2>
-        <span class="route-label">GET /users/from-france</span>
+        <h2>All Posts</h2>
+        <span class="route-label">GET /posts</span>
+        <button class="btn btn-new" id="new-post-btn">+ New post</button>
       </div>
-      <div class="grid" id="users-france"></div>
+      <div class="grid" id="posts"></div>
     </div>
 
-    <div class="section">
-      <div class="section-header">
-        <h2>Users with Skills</h2>
-        <span class="route-label">GET /users/skilled</span>
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal" id="modal">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-content" id="modal-content"></div>
       </div>
-      <div class="grid" id="users-skilled"></div>
     </div>
 
     <script src="script.js"></script>

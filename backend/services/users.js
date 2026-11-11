@@ -1,4 +1,5 @@
-const User = require("../models/user");
+// TODO: uncomment this line once your User model is ready
+// const User = require("../models/user");
 
 // The service layer handles all interaction with the database.
 // Each function receives the data it needs and returns a result.
@@ -8,8 +9,24 @@ const User = require("../models/user");
 // Return all users as an array.
 // ----------------------------------------------------------
 async function findAll() {
-  // TODO: return all User documents
-  // Hint: User.find()
+  // This is hardcoded example data so the frontend works straight away.
+  // TODO: replace with User.find()
+  return [
+    {
+      _id: "6aef672b31677b579035f3ea",
+      name: "Alice",
+      email: "alice@example.com",
+      address: { city: "Paris", country: "France" },
+      skills: [],
+      avatar: "https://images.pexels.com/photos/17191688/pexels-photo-17191688.jpeg",
+    },
+    {
+      _id: "6aef672b31677b579035f3eb",
+      name: "Bob",
+      email: "bob@example.com",
+      skills: ["JavaScript", "MongoDB", "Node.js"],
+    },
+  ];
 }
 
 // ----------------------------------------------------------
@@ -17,8 +34,8 @@ async function findAll() {
 // Returns null if no user is found.
 // ----------------------------------------------------------
 async function findById(id) {
-  // TODO: return the User with the given id
-  // Hint: User.findById(id)
+  // TODO: return User.findById(id)
+  return null;
 }
 
 // ----------------------------------------------------------
@@ -26,8 +43,8 @@ async function findById(id) {
 // Returns the created document.
 // ----------------------------------------------------------
 async function create(body) {
-  // TODO: create and save a new User from body
-  // Hint: User.create(body)
+  // TODO: return User.create(body)
+  return null;
 }
 
 // ----------------------------------------------------------
@@ -35,8 +52,8 @@ async function create(body) {
 // Returns the updated document, or null if not found.
 // ----------------------------------------------------------
 async function update(id, body) {
-  // TODO: find the user by id, apply the update, return the new document
-  // Hint: User.findByIdAndUpdate(id, body, { new: true })
+  // TODO: return User.findByIdAndUpdate(id, body, { new: true })
+  return null;
 }
 
 // ----------------------------------------------------------
@@ -44,8 +61,8 @@ async function update(id, body) {
 // Returns the deleted document, or null if not found.
 // ----------------------------------------------------------
 async function remove(id) {
-  // TODO: delete the user with the given id
-  // Hint: User.findByIdAndDelete(id)
+  // TODO: return User.findByIdAndDelete(id)
+  return null;
 }
 
 module.exports = { findAll, findById, create, update, remove };
